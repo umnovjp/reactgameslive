@@ -11,7 +11,8 @@ const IssueItem = ({ issue }) => {
           className="header"
           href={issue.html_url}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
+          // rel="noreferrer"
         >
           {issue.title}
         </a>
