@@ -23,18 +23,11 @@ function App() {
       .then((res) => res.json())
       .then((response) => setIssues(response));
       fetch(nhlGame)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        var object1 = data;
-        console.log(object1.gameData);
-        console.log(object1.liveData);
-      // .then((res) => res.json())
-      // .then((response) => setStats(response));
+      .then((res) => res.json())
+      .then((response) => setStats(response));
   console.log('nhlGame', nhlGame);
-  })};
-  
+  };
+
   return (
     <div className="ui container">
       {/* Here we pass our getRepoIssues function as a prop to SearchBar */}

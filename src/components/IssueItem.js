@@ -3,6 +3,7 @@ import React from 'react';
 // Issue item accepts a single issue as a prop
 // This component is solely responsible for displaying the specific information for a given issue
 const IssueItem = ({ issue }) => {
+  console.log(issue.labels_url);
   return (
     <div className="item">
       <i className="large github middle aligned icon"></i>
@@ -16,7 +17,9 @@ const IssueItem = ({ issue }) => {
         >
           {issue.title}
         </a>
-        <div className="description">{issue.description}</div>
+        <div className="description">{issue.description}
+        place
+        </div>
       </div>
     </div>
   );
