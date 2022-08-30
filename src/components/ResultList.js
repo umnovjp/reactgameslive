@@ -5,9 +5,9 @@ function ResultList(props) {
   return (
     <ul className="list-group">
       topbar
-      
-      {
-        console.log('I am in ResultList', props.results.gameData)
+      console.log('I am in ResultList', typeof props.results.liveData, props.results.liveData)
+      { 
+        <ul>something not to be empty</ul>
         // {props.results}
       // props.results.map((result) => (
       //   <li className="list-group-item">

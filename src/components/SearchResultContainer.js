@@ -13,7 +13,7 @@ const SearchResultContainer = () => {
   const searchGiphy = async (query) => {
     const response = await search(query);
     setResults(response.data); // original was response.data.data
-    console.log(response.data);
+    console.log(response.data.liveData.plays.allPlays[57]);
   };
 
   // We want to run this method when the component first loads so that we have images of kittens to display
