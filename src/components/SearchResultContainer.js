@@ -12,8 +12,12 @@ const SearchResultContainer = () => {
   // Method to get search results and set state
   const searchGiphy = async (query) => {
     const response = await search(query);
-    setResults(response.data); // original was response.data.data
-    console.log(response.data.liveData.plays.allPlays[57]);
+    setResults(response.data.gameData); // original was response.data.data; we pass only gameData to resultList
+    console.log(response.data.gameData.players);
+    var fullRoster = response.data.gameData.players;
+    var rosterArray = Object.values(fullRoster);
+    console.log(rosterArray);
+    console.log(results) // searchResultContainer does not know what results are, but resultList knows
   };
 
   // We want to run this method when the component first loads so that we have images of kittens to display
@@ -24,7 +28,8 @@ const SearchResultContainer = () => {
 
   return (
     <div>
-      {/* Pass our results to the ResultsList component to map over */}
+      {/* Pass our results to the ResultsList component to map over 
+      <ResultList results={results} />*/}
       <ResultList results={results} />
     </div>
   );
