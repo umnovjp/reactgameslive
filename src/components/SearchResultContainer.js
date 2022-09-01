@@ -7,7 +7,7 @@ import search from '../utils/API';
 
 const SearchResultContainer = () => {
   // Declare a new state variable, "results"
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState([]); //why is it an array in brackets?
 
   // Method to get search results and set state
   const searchGiphy = async (query) => {
