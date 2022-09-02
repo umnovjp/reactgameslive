@@ -17,6 +17,11 @@ const SearchResultContainer = () => {
     var fullRoster = response.data.gameData.players;
     var rosterArray = Object.values(fullRoster);
     console.log(rosterArray);
+    for (let i = 0; i < rosterArray.length; i++) {
+    
+      console.log(rosterArray[i].fullName, Object.keys(rosterArray[i]))};//rosterArray[i].split('fullName]')
+    
+  
     console.log(results) // searchResultContainer does not know what results are, but resultList knows
   };
 
