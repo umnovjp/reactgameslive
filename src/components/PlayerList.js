@@ -9,22 +9,19 @@ function PlayerList(props) {
   return (
     <ul className="list-group">
     {/* {const roster1 = props.results.players;
-    const roster2 = Object.values(roster1)} */}
+    const roster2 = Object.values(roster1)} 
+    console.log('I am in PlayerList', props.results)
+    // {props.results}*/}
       topbar player list
-      {console.log('I am in PlayerList', props.results)
-
-        // {props.results}
-      // props.results.map((result) => (
-      //   <li className="list-group-item">
-      //     <img
-      //     alt = {props.results}
-      //       // alt={result.title}
-      //       // className="img-fluid"
-      //       // src={result.images.original.url}
-      //     />
-      //   </li>
-      //  ))
-    }
+       {props.results.map((result) => (
+         <li className="list-group-item" key = {result.jerseyNumber}>
+            {result.jerseyNumber}
+            {result.person.fullName}
+            {result.position.code}
+            {result.stats.assists}
+            </li>
+ ))
+       }
     </ul>
   );
 }
