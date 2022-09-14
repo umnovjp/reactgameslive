@@ -27,7 +27,7 @@ const SearchResultContainer = () => {
   // We want to run this method when the component first loads so that we have images of kittens to display
   // The second argument is the dependency array. This means that this method will only run when the component first loads
   useEffect(() => {
-    searchGiphy('2021021133');
+    searchGiphy('2021020813');
   }, []);
   console.log('5', rosterArray[2])
   return (
