@@ -17,14 +17,16 @@ goalieStats.push(props.results[i].stats.goalieStats.pim);
 goalieStats.push(props.results[i].stats.goalieStats.shots);
 goalieStats.push(props.results[i].stats.goalieStats.saves);
 console.log(goalieStats)}
-
-else if (props.results[i].position.code === 'C' || 'D' || 'R' || 'L') {console.log(props.results[i].stats.skaterStats);
+else if (props.results[i].position.code === 'N/A') {console.log('fetch screwed up ', props.results[i].position.code)}
+else if (props.results[i].position.code === 'C' || 'D') {console.log(props.results[i].stats.skaterStats);
   console.log(props.results[i].position)
    playerStats.push(props.results[i].stats.skaterStats);
-  // playerStats.push(props.results[i].stats.skaterStats.shots);
-  // playerStats.push(props.results[i].stats.skaterStats.saves);
   console.log(playerStats)}
-else if (props.results[i].position.code === 'N/A') {console.log('position NA')}
+  else if (props.results[i].position.code === 'R' || 'L') {console.log(props.results[i].stats.skaterStats);
+    console.log(props.results[i].position)
+     playerStats.push(props.results[i].stats.skaterStats);
+    console.log(playerStats)}
+
 else {console.log('position unknown')}}
 //  for (i = 0; i < props.results.length; i++) {
 //   if (props.results.position.code === 'G')
