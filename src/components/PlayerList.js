@@ -12,15 +12,25 @@ function PlayerList(props) {
  let playerStats = [];
  for (i = 0; i < props.results.length; i++) {
 if (props.results[i].position.code === 'G') {console.log(props.results[i].stats.goalieStats)
+  goalieStats.push(props.results[i].person.fullName);
 goalieStats.push(props.results[i].stats.goalieStats.timeOnIce);
 goalieStats.push(props.results[i].stats.goalieStats.pim);
 goalieStats.push(props.results[i].stats.goalieStats.shots);
 goalieStats.push(props.results[i].stats.goalieStats.saves);
 console.log(goalieStats)}
 else if (props.results[i].position.code === 'N/A') {console.log('fetch screwed up ', props.results[i].position.code)}
-else if (props.results[i].position.code === 'C' || 'D') {console.log(props.results[i].stats.skaterStats);
+else if (props.results[i].position.code === 'C' || 'D') {console.log(props.results[i].stats.skaterStats.timeOnIce);
   console.log(props.results[i].position)
-   playerStats.push(props.results[i].stats.skaterStats);
+   playerStats.push(props.results[i].stats.skaterStats.timeOnIce);
+   playerStats.push(props.results[i].stats.skaterStats.assists);
+   playerStats.push(props.results[i].stats.skaterStats.goals);
+   playerStats.push(props.results[i].stats.skaterStats.shots);
+   playerStats.push(props.results[i].stats.skaterStats.blocked);
+   playerStats.push(props.results[i].stats.skaterStats.penaltyMinutes);
+   playerStats.push(props.results[i].stats.skaterStats.faceOffWins);
+   playerStats.push(props.results[i].stats.skaterStats.faceoffTaken);
+   playerStats.push(props.results[i].stats.skaterStats.powerPlayTimeOnIce);
+   playerStats.push(props.results[i].stats.skaterStats.shortHandedTimeOnIce);
   console.log(playerStats)}
   else if (props.results[i].position.code === 'R' || 'L') {console.log(props.results[i].stats.skaterStats);
     console.log(props.results[i].position)
@@ -42,16 +52,21 @@ else {console.log('position unknown')}}
     
     */    
     }    
-      topbar player list
+      Goalie will live here 
+      {goalieStats[0]}
+      {goalieStats[1]}
+       He made {goalieStats[4]} saves on {goalieStats[3]} shots
       {console.log(props.results.stats)}
        {props.results.map((result) => (
          <li className="list-group-item" key = {result.jerseyNumber}>
             {result.jerseyNumber}
             {result.person.fullName}
             {result.position.code}
+          
             {console.log(result.stats.skaterStats)}
-            {console.log(playerStats)}
+          
             {value}
+            
             </li>
  ))
        }  
